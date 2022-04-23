@@ -98,5 +98,9 @@ public final class OP {
     public func valueOf(field: String, section: String) -> String? {
       self.fields.filter { $0.label == field && $0.section?.label == section }.first?.value
     }
+    
+    public func valueOf(field: String) -> String? {
+      self.fields.filter { $0.label == field }.first?.value
+    }
   }
 }
