@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 
 import PackageDescription
 
@@ -11,7 +11,7 @@ let package = Package(
     .library(name: "Sh1Password", targets: ["Sh1Password"])
   ],
   dependencies: [
-    .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.0.0"),
+    .package(url: "https://github.com/FullQueueDeveloper/Sh.git", from: "1.2.0"),
   ],
   targets: [
     .target(name: "Sh1Password", dependencies: ["Sh"])
