@@ -13,10 +13,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-12
-            swift: "5.7"
+          - os: macos-13
+            swift: "5.8"
           - os: ubuntu-latest
-            swift: "5.7"
+            swift: "5.8"
     steps:
       - uses: fwal/setup-swift@v1
         with:
