@@ -5,10 +5,10 @@ public final class OP {
 
   public init() {}
 
-  public func get(item: String, vault: String, fields: String) throws -> String {
+  public func get(item: String, vault: String, fields: String, reveal: Bool = false) throws -> String {
     let cmd =
     """
-    op item get "\(item)" --vault "\(vault)" --fields "\(fields)"
+    op item get "\(item)" --vault "\(vault)" --fields "\(fields)" \(reveal ? " --reveal" : "")
     """
     if let value = try sh(cmd) {
       return value
@@ -18,10 +18,10 @@ public final class OP {
   }
 
   // async version
-  public func get(item: String, vault: String, fields: String) async throws -> String {
+  public func get(item: String, vault: String, fields: String, reveal: Bool = false) async throws -> String {
     let cmd =
     """
-    op item get "\(item)" --vault "\(vault)" --fields "\(fields)"
+    op item get "\(item)" --vault "\(vault)" --fields "\(fields)" \(reveal ? " --reveal" : "")
     """
     if let value = try await sh(cmd) {
       return value
